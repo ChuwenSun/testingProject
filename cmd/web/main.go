@@ -21,15 +21,11 @@ const portNumber = ":1234"
 var app config.AppConfig
 var session *scs.SessionManager
 
-// main is the main function
 func main() {
-	// what am I going to put in the session
 	gob.Register(models.Reservation{})
 
 	// change this to true when in production
 	app.InProduction = false
-
-	// set up the session
 	session = scs.New()
 	session.Lifetime = 24 * time.Hour
 	session.Cookie.Persist = true
@@ -52,7 +48,7 @@ func main() {
 	render.NewTemplates(&app)
 
 	fmt.Println(fmt.Sprintf("Staring application on port %s", portNumber))
-
+	//_ = http.ListenAndServe(portNumber, nil)
 	srv := &http.Server{
 		Addr:    portNumber,
 		Handler: routes(&app),

@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/justinas/nosurf"
 	"net/http"
+
+	"github.com/justinas/nosurf"
 )
 
-// NoSurf is the csrf protection middleware
+// csrf middleware
 func NoSurf(next http.Handler) http.Handler {
 	csrfHandler := nosurf.New(next)
 

@@ -3,12 +3,14 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+
+	"log"
+	"net/http"
+
 	"hotelManagement/internal/config"
 	"hotelManagement/internal/forms"
 	"hotelManagement/internal/models"
 	"hotelManagement/internal/render"
-	"log"
-	"net/http"
 )
 
 // Repo the repository used by the handlers
@@ -41,7 +43,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 // About is the handler for the about page
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-	// perform some logic
+	// stringMap to store strings
 	stringMap := make(map[string]string)
 	stringMap["test"] = "Hello, again"
 

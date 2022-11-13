@@ -3,14 +3,16 @@ package render
 import (
 	"bytes"
 	"fmt"
-	"hotelManagement/internal/config"
-	"hotelManagement/internal/models"
+
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
 
 	"github.com/justinas/nosurf"
+
+	"hotelManagement/internal/config"
+	"hotelManagement/internal/models"
 )
 
 var functions = template.FuncMap{}
